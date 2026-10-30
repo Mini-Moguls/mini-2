@@ -1,0 +1,33 @@
+[build]
+  publish = "."
+  command = "echo 'Static site ready for deployment'"
+
+[[redirects]]
+  from = "/services.html"
+  to = "/zones.html"
+  status = 301
+
+[[redirects]]
+  from = "/service.html"
+  to = "/experience.html"
+  status = 301
+
+[[redirects]]
+  from = "/team.html"
+  to = "/participants.html"
+  status = 301
+
+[[redirects]]
+  from = "/patients.html"
+  to = "/parents.html"
+  status = 301
+
+[[redirects]]
+  from = "/appointments.html"
+  to = "/register.html"
+  status = 301
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
