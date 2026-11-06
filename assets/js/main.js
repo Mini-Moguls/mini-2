@@ -419,6 +419,17 @@
         }
 
         const ref = makeRef('MM');
+        const topicField = $('select[name="topic"]', form);
+        const isPartner = topicField && /sponsor|partner/i.test(topicField.value);
+        const targetEmail = isPartner ? 'partners@minimoguls.online' : 'info@minimoguls.online';
+        const fd = new FormData(form);
+        fd.append('_subject', 'Mini Moguls Market Day Submission (' + ref + ')');
+        fd.append('_captcha', 'false');
+        fetch('https://formsubmit.co/ajax/' + targetEmail, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: fd
+        }).catch(() => {});
         const template = form.getAttribute('data-success-text') || 'Thank you! Reference {ref}. Please note: connect a backend service in assets/js/main.js to transmit form entries.';
         const msg = template.replace('{ref}', ref);
         const successEl = $('[data-success]', form);
@@ -791,6 +802,19 @@
       if (doneView) {
         doneView.hidden = false;
         if (doneRef) doneRef.textContent = ref;
+      const isPartner = state.serviceId === 'sponsor' || state.clinicianId === 'sponsor';
+      const targetEmail = isPartner ? 'partners@minimoguls.online' : 'info@minimoguls.online';
+      const fd = new FormData(form);
+      fd.append('reference', ref);
+      fd.append('selected_zone', state.serviceId || '');
+      fd.append('selected_track', state.clinicianId || '');
+      fd.append('_subject', 'Mini Moguls Registration Wizard (' + ref + ')');
+      fd.append('_captcha', 'false');
+      fetch('https://formsubmit.co/ajax/' + targetEmail, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: fd
+      }).catch(() => {});
         if (doneSummary) {
           doneSummary.textContent = `Thank you, ${first || 'Parent/Guardian'}! Your registration summary for ${svc ? svc.name : 'Mini Moguls Market Day'} (${doc ? doc.name : 'Selected Group'}) on ${state.dateLabel} has been prepared locally.`;
         }
