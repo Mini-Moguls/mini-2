@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mini Moguls Market Day — Official Printable Letterhead &amp; PDF Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #F4C84A;
+      --black: #111111;
+      --cream: #FFF9EB;
+      --white: #FFFFFF;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: #1e1e1e;
+      color: var(--black);
+      padding: 24px 16px 60px;
+    }
+    .toolbar {
+      max-width: 210mm;
+      margin: 0 auto 20px;
+      background: var(--black);
+      color: var(--white);
+      border: 2px solid var(--gold);
+      border-radius: 16px;
+      padding: 14px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .toolbar h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 16px;
+      margin: 0;
+      color: var(--gold);
+    }
+    .toolbar p {
+      margin: 2px 0 0;
+      font-size: 12px;
+      color: #d4d4d4;
+    }
+    .toolbar-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .btn {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: 2px solid var(--gold);
+      background: var(--gold);
+      color: var(--black);
+      cursor: pointer;
+    }
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      border-color: #555;
+    }
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      background: var(--white);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.45);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Header */
+    .lh-header {
+      background: var(--cream);
+      border-bottom: 4px solid var(--black);
+      padding: 18mm 20mm 12mm;
+      position: relative;
+    }
+    .lh-top-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 8px;
+      background: linear-gradient(90deg, var(--gold) 0%, var(--gold) 70%, var(--black) 70%, var(--black) 100%);
+    }
+    .lh-header-grid {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .lh-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .lh-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      margin: 0;
+    }
+    .lh-tagline {
+      font-family: 'Outfit', sans-serif;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--black);
+      background: var(--gold);
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 4px;
+      border: 1.5px solid var(--black);
+      margin-top: 5px;
+    }
+    .lh-contact {
+      text-align: right;
+      font-size: 11.5px;
+      line-height: 1.55;
+      color: #222;
+    }
+    .lh-contact strong {
+      font-weight: 700;
+      color: var(--black);
+    }
+    /* Editable Body */
+    .lh-body {
+      flex: 1;
+      padding: 16mm 20mm;
+      font-size: 13.5px;
+      line-height: 1.7;
+      color: #1a1a1a;
+      outline: none;
+    }
+    .lh-body h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 17px;
+      margin: 18px 0 10px;
+    }
+    /* Footer */
+    .lh-footer {
+      background: var(--black);
+      color: var(--white);
+      padding: 8mm 20mm;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 10.5px;
+      border-top: 4px solid var(--gold);
+    }
+    .lh-footer span.gold {
+      color: var(--gold);
+      font-weight: 700;
+    }
+    @media print {
+      body { background: none; padding: 0; }
+      .toolbar { display: none !important; }
+      .page {
+        width: 100%;
+        min-height: 100vh;
+        box-shadow: none;
+        margin: 0;
+      }
+      @page {
+        size: A4;
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <div>
+      <h1>Mini Moguls Market Day — Free Official Letterhead Studio</h1>
+      <p>Click anywhere on the letter below to edit the text, or switch templates, then click <strong>Print / Save as PDF</strong>.</p>
+    </div>
+    <div class="toolbar-actions">
+      <button type="button" class="btn btn-secondary" onclick="loadTemplate('sponsor')">Load Sponsor Proposal Letter</button>
+      <button type="button" class="btn btn-secondary" onclick="loadTemplate('school')">Load School Invitation Letter</button>
+      <button type="button" class="btn" onclick="window.print()">Print / Save as PDF</button>
+    </div>
+  </div>
+
+  <div class="page">
+    <header class="lh-header">
+      <div class="lh-top-bar"></div>
+      <div class="lh-header-grid">
+        <div class="lh-brand">
+          <svg viewBox="0 0 48 48" width="54" height="54" aria-hidden="true">
+            <circle cx="24" cy="24" r="22.5" fill="#F4C84A" stroke="#111111" stroke-width="2.5"/>
+            <path d="M24 5l2 4.5 4.5 2-4.5 2-2 4.5-2-4.5-4.5-2 4.5-2z" fill="#FFFFFF" stroke="#111111" stroke-width="1.8" stroke-linejoin="round"/>
+            <path d="M10 19h28l2 6H8z" fill="#111111" stroke="#111111" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M8 25h8v2a4 4 0 0 1-8 0zm8 0h8v2a4 4 0 0 1-8 0zm8 0h8v2a4 4 0 0 1-8 0zm8 0h8v2a4 4 0 0 1-8 0z" fill="#FFFFFF" stroke="#111111" stroke-width="1.8"/>
+            <rect x="11" y="30" width="26" height="9" rx="2" fill="#111111"/>
+            <path d="M15 34.5h18" stroke="#F4C84A" stroke-width="2.2" stroke-linecap="round"/>
+          </svg>
+          <div>
+            <p class="lh-title">Mini Moguls Market Day</p>
+            <span class="lh-tagline">CREATE · SELL · LEARN</span>
+          </div>
+        </div>
+        <div class="lh-contact">
+          <strong>Venue:</strong> National Botanic Gardens, Harare, Zimbabwe<br>
+          <strong>Event Date:</strong> Saturday, 12 December 2026 (10:00 AM – 4:00 PM)<br>
+          <strong>Tel:</strong> +263 771 222 748 · +263 783 116 564<br>
+          <strong>Email:</strong> info@minimoguls.online · partners@minimoguls.online<br>
+          <strong>Web:</strong> www.minimoguls.online
+        </div>
+      </div>
+    </header>
+
+    <main id="letter-content" class="lh-body" contenteditable="true" spellcheck="true">
+      <p><strong>Date:</strong> 6 November 2026</p>
+      <p><strong>To:</strong> Prospective Partner / Sponsor<br>Harare, Zimbabwe</p>
+      <h2>RE: INVITATION TO PARTNER WITH MINI MOGULS MARKET DAY — SATURDAY, 12 DECEMBER 2026</h2>
+      <p>Dear Partner,</p>
+      <p>We are delighted to invite your organisation to partner with <strong>Mini Moguls Market Day</strong>, taking place on <strong>Saturday, 12 December 2026</strong> from <strong>10:00 AM to 4:00 PM</strong> at the <strong>National Botanic Gardens in Harare, Zimbabwe</strong>.</p>
+      <p>Built around the tagline <strong>CREATE. SELL. LEARN.</strong>, Mini Moguls Market Day brings children and young people across three age tracks—<strong>Junior Moguls (Ages 5–8)</strong>, <strong>Young Moguls (Ages 9–13)</strong>, and <strong>Senior Moguls (Ages 14–18)</strong>—together to create original products, run their own market stalls, interact with customers and develop practical financial literacy and entrepreneurial confidence.</p>
+      <p>We welcome partnerships across our six creative Showcase Zones (<em>Arts, Crafts &amp; Design</em>, <em>Baking, Food &amp; Treats</em>, <em>Tech &amp; Digital Innovation</em>, <em>Fashion &amp; Accessories</em>, <em>Games &amp; Interactive Fun</em>, and <em>Green &amp; Sustainable Ideas</em>), as well as youth awards, starter kits and event infrastructure support.</p>
+      <p>We would love to schedule a brief call or meeting to tailor a partnership that aligns with your brand and community goals. You can reach our organising team directly at <strong>partners@minimoguls.online</strong> or on <strong>+263 771 222 748 / +263 783 116 564</strong>.</p>
+      <br>
+      <p>Warm regards,</p>
+      <p><strong>The Organising Team</strong><br>Mini Moguls Market Day · Harare, Zimbabwe<br>partners@minimoguls.online · info@minimoguls.online</p>
+    </main>
+
+    <footer class="lh-footer">
+      <span><span class="gold">MINI MOGULS MARKET DAY</span> · National Botanic Gardens, Harare</span>
+      <span>info@minimoguls.online · partners@minimoguls.online · <span class="gold">www.minimoguls.online</span></span>
+    </footer>
+  </div>
+
+  <script>
+    const TEMPLATES = {
+      sponsor: document.getElementById('letter-content').innerHTML,
+      school: `<p><strong>Date:</strong> 6 November 2026</p>
+      <p><strong>To:</strong> The School Head / Entrepreneurship Club Coordinator<br>Harare, Zimbabwe</p>
+      <h2>RE: SCHOOL INVITATION — MINI MOGULS MARKET DAY (SATURDAY, 12 DECEMBER 2026)</h2>
+      <p>Dear Educator,</p>
+      <p>We warmly invite your students and families to participate in <strong>Mini Moguls Market Day</strong> on <strong>Saturday, 12 December 2026 (10:00 AM – 4:00 PM)</strong> at the <strong>National Botanic Gardens, Harare</strong>.</p>
+      <p>Mini Moguls Market Day gives young people a safe, inspiring platform to <strong>CREATE, SELL and LEARN</strong> by showcasing handmade crafts, baked treats, coding/STEM inventions, fashion accessories, tabletop games and sustainable ideas across three age groups: <strong>Junior Moguls (5–8*)</strong>, <strong>Young Moguls (9–13)</strong> and <strong>Senior Moguls (14–18)</strong>.</p>
+      <p>Students may register solo stalls, sibling/friend teams or school entrepreneurship club tables (with parent/guardian or teacher coordination). Visit <strong>www.minimoguls.online</strong> or contact us at <strong>info@minimoguls.online</strong> / <strong>+263 771 222 748</strong> to reserve space for your learners.</p>
+      <br>
+      <p>Warm regards,</p>
+      <p><strong>The Organising Team</strong><br>Mini Moguls Market Day · Harare, Zimbabwe<br>info@minimoguls.online · +263 771 222 748 / +263 783 116 564</p>`
+    };
+    function loadTemplate(key) {
+      document.getElementById('letter-content').innerHTML = TEMPLATES[key];
+    }
+  </script>
+</body>
+</html>
